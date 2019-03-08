@@ -6,6 +6,7 @@ import {
 import Home from '../containers/Home'
 import Profile from '../containers/Profile'
 import Camera from '../containers/Camera'
+import Live from '../containers/Live'
 import { colors } from '../configs/platform'
 import Icon from '../configs/icons'
 
@@ -29,6 +30,13 @@ const AppTabs = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Profile',
       tabBarIcon: Icon.profile,
+    },
+  },
+  Live: {
+    screen: Live,
+    navigationOptions: {
+      tabBarLabel: 'Live',
+      tabBarIcon: Icon.live,
     },
   },
 }, {

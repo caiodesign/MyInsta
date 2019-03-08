@@ -10,6 +10,13 @@ export const icon = {
       color={tintColor}
     />
   ),
+  live: ({ tintColor }) => (
+    <Ionicons
+      name={isApple ? 'ios-speedometer' : 'md-speedometer'}
+      size={25}
+      color={tintColor}
+    />
+  ),
   profile: ({ tintColor }) => (
     <FontAwesome
       name={isApple ? 'user-o' : 'user'}
