@@ -5,21 +5,30 @@ import {
 } from 'react-navigation'
 import Home from '../containers/Home'
 import Profile from '../containers/Profile'
-import { icons, colors } from '../configs/platform'
+import Camera from '../containers/Camera'
+import { colors } from '../configs/platform'
+import Icon from '../configs/icons'
 
 const AppTabs = createBottomTabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
       tabBarLabel: 'Home',
-      tabBarIcon: icons.home,
+      tabBarIcon: Icon.home,
+    },
+  },
+  Camera: {
+    screen: Camera,
+    navigationOptions: {
+      tabBarLabel: 'Camera',
+      tabBarIcon: Icon.camera,
     },
   },
   Profile: {
     screen: Profile,
     navigationOptions: {
       tabBarLabel: 'Profile',
-      tabBarIcon: icons.profile,
+      tabBarIcon: Icon.profile,
     },
   },
 }, {

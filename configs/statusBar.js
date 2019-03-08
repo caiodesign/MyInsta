@@ -6,13 +6,13 @@ import { colors } from './platform'
 const AppStatusBar = ({ props }) => (
   <View
     style={{
-      backgroundColor: "purple",
-      color: "#fff",
+      backgroundColor: colors.background,
+      color: '#fff',
       tintColor: colors.active,
       height: Constants.statusBarHeight,
     }}
   >
-    <StatusBar translucent barStyle="light-content" {...props} tintColor={colors.active} />
+    <StatusBar translucent {...props} tintColor={colors.active} />
   </View>
 )
 
