@@ -1,28 +1,33 @@
-import React from 'react'
 import {
   createAppContainer,
   createStackNavigator,
   createBottomTabNavigator,
 } from 'react-navigation'
-import { FontAwesome } from '@expo/vector-icons'
 import Home from '../containers/Home'
+import Profile from '../containers/Profile'
+import { icons, colors } from '../configs/platform'
 
 const AppTabs = createBottomTabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
       tabBarLabel: 'Home',
-      tabBarIcon: ({ tintColor }) => (
-        <FontAwesome name="plus-square" size={30} color={tintColor} />
-      ),
+      tabBarIcon: icons.home,
+    },
+  },
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      tabBarLabel: 'Profile',
+      tabBarIcon: icons.profile,
     },
   },
 }, {
   tabBarOptions: {
-    activeTintColor: 'purple',
+    activeTintColor: colors.active,
     style: {
       height: 56,
-      backgroundColor: '#fff',
+      backgroundColor: colors.background,
       shadowColor: 'rgba(0, 0, 0, 0.24)',
       shadowOffset: {
         width: 0,
@@ -36,9 +41,9 @@ const AppTabs = createBottomTabNavigator({
 
 
 const AppNavigator = createStackNavigator({
-  Home: {
-    screen: AppTabs,
-  },
+  Home: AppTabs,
+}, {
+  initialRouteName: 'Home',
 })
 
 

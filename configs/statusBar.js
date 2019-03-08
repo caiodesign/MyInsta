@@ -1,10 +1,18 @@
 import React from 'react'
+import { View, StatusBar } from 'react-native'
 import { Constants } from 'expo'
-import { View, StatusBar } from 'react-navigation'
+import { colors } from './platform'
 
-const AppStatusBar = ({ backgroundColor, props }) => (
-  <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
-    <StatusBar translucent backgroundColor={backgroundColor} {...props} />
+const AppStatusBar = ({ props }) => (
+  <View
+    style={{
+      backgroundColor: "purple",
+      color: "#fff",
+      tintColor: colors.active,
+      height: Constants.statusBarHeight,
+    }}
+  >
+    <StatusBar translucent barStyle="light-content" {...props} tintColor={colors.active} />
   </View>
 )
 

@@ -1,38 +1,24 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-
-const styles = StyleSheet.create({
-  img: {
-    width: 140,
-    height: 100,
-    marginBottom: 20,
-  },
-  text: {
-    marginBottom: 20,
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-  },
-})
+import React, { Component, Fragment } from 'react'
+import { FlatList } from 'react-native'
+import Card from '../../Components/Card'
+import Profile from '../../Components/Profile'
+import posts from './posts.json'
 
 class Home extends Component {
+  renderItem = ({ item }) => (
+    <Fragment key={item.id}>
+      <Profile {...item.author} />
+      <Card {...item} />
+    </Fragment>
+  )
+
   render() {
     return (
-      <View>
-        <Image
-          style={styles.img}
-          source={{ url: 'https://via.placeholder.com/140x100' }}
-        />
-        <Text style={styles.text}>Welcome to RN Training</Text>
-        <TouchableOpacity
-          onPress={() => console.log(this.props)}
-          style={styles.button}
-        >
-          <Text>Enter</Text>
-        </TouchableOpacity>
-      </View>
+      <FlatList
+        data={posts}
+        renderItem={this.renderItem}
+        keyExtractor={(item, index) => index.toString()}
+      />
     )
   }
 }

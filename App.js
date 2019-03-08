@@ -1,22 +1,14 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import AppContainer from './stack'
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
+import React, { Fragment } from 'react'
+import AppStatusBar from './configs/statusBar'
+import {AppContaiberTabs} from './stack'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View styles={styles.container}>
-        <AppContainer />
-      </View>
+      <Fragment>
+        <AppStatusBar />
+        <AppContaiberTabs />
+      </Fragment>
     )
   }
 }
